@@ -14,6 +14,7 @@ function checkLogin() {
   )
     .then((response) => {
       if (!response.ok) {
+        window.location.href = "/login";
         throw new Error("Check login failed");
       }
       return response.json();
@@ -26,7 +27,7 @@ function checkLogin() {
       }
     })
     .catch((error) => {
-      console.error("Error:", error.message);
+      window.location.href = "/login";
     });
 }
 
