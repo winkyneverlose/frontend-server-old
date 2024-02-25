@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>用户登录</title>
+    <%- include('./head') %>
+    <script src="/javascripts/auth.js"></script>
+    <link rel="stylesheet" href="/stylesheets/auth.css" />
+</head>
+
+<body>
+    <main>
+        <div class="auth-box">
+            <h1>用户登录</h1>
+            <form id="loginForm">
+                <input type="text" name="username" placeholder="用户名/电子邮箱/用户ID" />
+                <input type="password" name="password" placeholder="密码" />
+                <button type="button" onclick="submitLoginForm();">登录</button>
+            </form>
+        </div>
+    </main>
+</body>
+
+</html>
