@@ -1,5 +1,5 @@
 .auth-box {
-    width: 100%;
+    width: 500px;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -29,24 +29,10 @@
     font-size: large;
 }
 
-@media screen and (max-width: 1000px) {
-    .auth-box>h1 {
-        font-size: 3em;
+@media screen and (max-width: 500px) {
+
+    .auth-box {
+        width: 100%;
     }
 
-    .auth-box>a {
-        font-size: 2em;
-    }
-
-    .auth-box>form>input {
-        margin-top: 5px;
-        padding: 10px;
-        font-size: 3em;
-    }
-
-    .auth-box>form>button {
-        margin-top: 5px;
-        padding: 10px;
-        font-size: 2.8em;
-    }
 }
