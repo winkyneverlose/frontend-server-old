@@ -8,10 +8,10 @@ header {
 }
 
 .show-header {
+    display: none;
     position: fixed;
     top: 30%;
     left: 5px;
-
 }
 
 .show-header>.logo>img {
@@ -45,6 +45,10 @@ header>.logo>img {
 }
 
 @media screen and (max-width: 768px) {
+    .show-header {
+        display: flex;
+    }
+
     header {
         zoom: 1.5;
         position: fixed;

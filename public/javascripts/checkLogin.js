@@ -3,15 +3,12 @@
 
 // Function to check if the user is logged in
 function checkLogin() {
-  fetch(
-    `${back_server.http}://${back_server.host}:${back_server.port}/get_session`,
-    {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    }
-  )
+  fetch(`/api/get_session`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  })
     .then((response) => {
       if (!response.ok) {
         window.location.href = "/login";
@@ -21,8 +18,10 @@ function checkLogin() {
     })
     .then((json) => {
       if (json.status === "success") {
+        sessionStorage.setItem("user-login", "true");
         console.log("User is logged in");
       } else {
+        sessionStorage.setItem("user-login", "false");
         window.location.href = "/login";
       }
     })

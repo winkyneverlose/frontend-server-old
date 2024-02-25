@@ -8,6 +8,21 @@ const config = require("./config");
 const express = require("express");
 const app = express();
 
+// Load the proxy
+const { createProxyMiddleware } = require("http-proxy-middleware");
+
+// Create the proxy
+const proxy = createProxyMiddleware("/api", {
+  target: `http://${config.back_server.host}:${config.back_server.port}`,
+  changeOrigin: true,
+  pathRewrite: {
+    "^/api": "",
+  },
+});
+
+// Use the proxy
+app.use("/api", proxy);
+
 // Load path
 const path = require("path");
 

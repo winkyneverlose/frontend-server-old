@@ -7,7 +7,7 @@ function submitLoginForm() {
     document.getElementById("loginForm").elements["username"].value;
   const password =
     document.getElementById("loginForm").elements["password"].value;
-  fetch(`${back_server.http}://${back_server.host}:${back_server.port}/login`, {
+  fetch(`/api/login`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -57,20 +57,17 @@ function submitRegisterForm() {
   const email = document.getElementById("registerForm").elements["email"].value;
   const password =
     document.getElementById("registerForm").elements["password"].value;
-  fetch(
-    `${back_server.http}://${back_server.host}:${back_server.port}/register`,
-    {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        username,
-        email,
-        password,
-      }),
-    }
-  )
+  fetch(`/api/register`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      username,
+      email,
+      password,
+    }),
+  })
     .then((response) => {
       if (!response.ok) {
         throw new Error("Register failed");
@@ -108,4 +105,8 @@ function submitRegisterForm() {
     .catch((error) => {
       console.error("Error:", error.message);
     });
+}
+
+if (sessionStorage.getItem("user-login") === "true") {
+  window.location.href = "/";
 }
