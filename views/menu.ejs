@@ -1,0 +1,31 @@
+<div class="show-header">
+    <div class="logo">
+        <img src="/favicon.ico" alt="可喵大人" />
+    </div>
+</div>
+<header>
+    <div class="logo">
+        <img src="/favicon.ico" alt="可喵大人" />
+    </div>
+    <nav class="navbar">
+        <a class="navbar-brand" id="navbar-main-brand">≡</a>
+        <a class="navbar-brand ch-brand" href="/">可喵大人の控制</a>
+        <a class="navbar-brand ch-brand" href="/task">可喵大人の任务</a>
+        <a class="navbar-brand ch-brand" href="/award">可喵大人の奖励</a>
+        <a class="navbar-brand ch-brand" href="/settings">设置</a>
+    </nav>
+</header>
+<script>
+    const showHeader = document.querySelector('.show-header');
+    const header = document.querySelector('header');
+    const main = document.querySelector('main');
+    showHeader.addEventListener('click', () => {
+        header.classList.toggle('show');
+    });
+    main.addEventListener('click', (event) => {
+        if (event.target === main) {
+            header.classList.remove('show');
+            header.classList.toggle('hide');
+        }
+    });
+</script>

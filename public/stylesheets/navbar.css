@@ -1,0 +1,92 @@
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #f8f9fa;
+    z-index: 1000;
+}
+
+.show-header {
+    position: fixed;
+    top: 30%;
+    left: 5px;
+
+}
+
+.show-header>.logo>img {
+    width: 40px;
+    border-radius: 50%;
+    box-shadow: inset 0 0 10px 5px #000;
+}
+
+header>.logo {
+    display: flex;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+header>.logo>img {
+    width: 50px;
+    border-radius: 10px;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    z-index: 1000;
+}
+
+.navbar>.navbar-brand {
+    height: 20px;
+    line-height: 20px;
+    padding: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        zoom: 1.5;
+        position: fixed;
+        top: 0;
+        left: -100%;
+        flex-direction: column;
+        justify-content: flex-start;
+        height: 100%;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    @keyframes slideIn {
+        from {
+            left: -100%;
+        }
+
+        to {
+            left: 0;
+        }
+    }
+
+    @keyframes slideOut {
+        from {
+            left: 0;
+        }
+
+        to {
+            left: -100%;
+        }
+    }
+
+    .hidden {
+        left: -100%;
+        animation: slideOut 0.5s forwards;
+    }
+
+    .show {
+        left: 0;
+        animation: slideIn 0.5s forwards;
+    }
+}
