@@ -8,6 +8,10 @@
     background-color: #f5f5f5;
 }
 
+.auth-box>a {
+    font-size: large;
+}
+
 .auth-box>form {
     display: flex;
     flex-direction: column;
@@ -28,6 +32,10 @@
 @media screen and (max-width: 1000px) {
     .auth-box>h1 {
         font-size: 3em;
+    }
+
+    .auth-box>a {
+        font-size: 2em;
     }
 
     .auth-box>form>input {

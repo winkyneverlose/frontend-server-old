@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>用户注册</title>
+    <%- include('./head') %>
+    <script src="/javascripts/auth.js"></script>
+    <link rel="stylesheet" href="/stylesheets/auth.css" />
+</head>
+
+<body>
+    <main>
+        <div class="auth-box">
+            <h1>用户注册</h1>
+            <form id="registerForm">
+                <input type="text" name="username" placeholder="用户名" />
+                <input type="text" name="email" placeholder="电子邮箱" />
+                <input type="password" name="password" placeholder="密码" />
+                <button type="button" onclick="submitRegisterForm();">注册</button>
+            </form>
+            <br>
+            <a href="/login">已有账号？点击登录喵~</a>
+        </div>
+    </main>
+</body>
+
+</html>

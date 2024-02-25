@@ -8,6 +8,9 @@ const router = require("express").Router();
 // Login route
 router.use("/login", require("./__login"));
 
+// Register route
+router.use("/register", require("./__register"));
+
 // Load the default route
 router.use("*", (req, res) => {
   res.status(404).json({
