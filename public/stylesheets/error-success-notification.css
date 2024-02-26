@@ -27,14 +27,6 @@
   animation-play-state: running;
 }
 
-@media screen and (max-width: 800px) {
-
-  .success-message,
-  .error-message {
-    font-size: xx-large;
-  }
-}
-
 .success-message {
   color: rgb(0, 0, 0);
   background-color: rgb(100, 255, 100);
